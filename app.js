@@ -9,13 +9,44 @@
  *  }
  */ 
 
+/*
+              <li id="1" class="current">
+                <h3>I'm a man</h3>
+              </li> 
+              <li id="2">
+                <h3>I'm a woman</h3>     
+              </li>    
+              <li id="3">
+                <h3>Hello</h3>     
+              </li>
+*/
+
 var tmpl = ' <li id="ID">' +
            '  <h3>SENTENCE</h3>' +
            ' </li> ';
 
-$(document).ready(function(){
+var temp1=[];
 
-  
+var fails = 0;
+
+$(document).ready(function(){
+    $(".final").hide();
+    $(".sentences").hide();
+    for (var i =0; i < data.length; i++){
+        temp1[i] = tmpl.replace("ID", i+1).replace("SENTENCE", data[i].phrase_en);
+        $(".sentences").append(temp1[i]);
+    }
+    
+    
+    do{
+        var i=0;
+        $(".practice").append(temp1[i]);
+        $("btn opt-continue").click(function(){
+            
+        });
+        
+    }while(i<temp1.length);
+      
 });
 
 
