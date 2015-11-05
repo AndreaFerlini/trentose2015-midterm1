@@ -36,21 +36,32 @@ $(document).ready(function(){
         temp1[i] = tmpl.replace("ID", i+1).replace("SENTENCE", data[i].phrase_en);
         $(".sentences").append(temp1[i]);
     }
-    
-    
     do{
         var i=0;
         $(".practice").append(temp1[i]);
         $("btn opt-continue").click(function(){
-            
+            if(!checkWord($("form-control").val(), i)){
+                fails++;
+            }
+            $(".practice").remove(temp1[i]);
+            i++;
         });
         
-    }while(i<temp1.length);
-      
+    }while(i<data.length);
+    
+    $("#tot-good").append(data.leg-fails);
+    $("#tot").append(data.length);
+    $(".final").hide();
+    
 });
 
-
-
+function checkWord (word, pos){
+    if (word == data[pos].phrase_en){
+        return true;
+    }else{
+        return false;
+    }
+};
 
 
 
