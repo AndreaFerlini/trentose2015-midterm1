@@ -27,7 +27,7 @@ h1 > span{
   height: 120px;
   margin-right: 20px;
   margin-top: 20px;
-  text-align: center;  
+  text-align: center;
   display: none;
 }
 
@@ -53,5 +53,5 @@ h1 > span{
 
 .jumbotron {
   min-height: 300px;
-  text-align: center;  
+  text-align: center;
 }
